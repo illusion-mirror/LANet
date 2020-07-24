@@ -28,6 +28,12 @@ img_root:   root/to/image such as   d:/imgs
 label_root: root/to/label           d:/G_T
 filename:                           train.txt 
 '''
+'''
+数据集的RGB平均值为
+[0.18862618857240948,0.18871731868931105,0.18797078542627094]
+数据集的RGB方差为
+[0.20141003702612348,0.2015158028693538,0.20092256383873736]
+'''
 def dataloader(img_root,label_root,image_size,batch_size,filename =None,mode='train',num_thread=0):
     mean = torch.Tensor([128.68, 116.779, 103.939]).view(3, 1, 1)/255
     transform = transforms.Compose([
